@@ -1,9 +1,9 @@
 variable "db_username" {
   type = string
-  default = "taisei"
+  default = "your_username"
 }
 
 variable "db_password" {
   type = string
-  default = "furuichi"
+  default = "your_password"
 }
