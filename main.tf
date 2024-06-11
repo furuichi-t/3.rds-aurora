@@ -35,12 +35,12 @@ resource "tls_private_key" "tf-private" {
 }
 
 resource "aws_key_pair" "tf-key" { 
-  key_name = "furuichi-tf"
+  key_name = "my-tf"
   public_key = tls_private_key.tf-private.public_key_openssh
 }
 
 resource "aws_security_group" "tf-sg" { 
-  name = "furuichi-tf-sg"
+  name = "my-tf-sg"
   vpc_id = aws_vpc.tf-vpc.id
   ingress  {
     from_port = 80
@@ -101,7 +101,7 @@ resource "local_file" "private_key" {
 
 #RDS
 resource "aws_security_group" "tf-db-sg" { 
-  name = "furuichi-db-sg"
+  name = "my-db-sg"
   vpc_id = aws_vpc.tf-vpc.id
     ingress  {
     from_port = 3306
